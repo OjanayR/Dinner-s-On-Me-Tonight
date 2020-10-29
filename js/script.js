@@ -25,19 +25,19 @@ mealContainer.innerHTML = `
 <div class= "column five">
 <img src = "${meal.strMealThumb}" alt="Meal Img"/>
 <p><strong>Area:</strong> ${meal.strArea}</p>
-<h5>Ingredients</h5>
+<h3>Ingredients</h3>
 <ul>${ingredients.map(ingredient => `
 <li>${ingredient}</li>`).join('')}
 </ul>
 </div>
 <div class= "column seven">
-<h4>${meal.strMeal}</h4>
+<h3>${meal.strMeal}</h3>
 <p>${meal.strInstructions}</p>
 </div>
 </div>
 
 <div class= "row">
-<h5>Video Instructions</h5>
+<h3>Video Instructions</h3>
 <div class="videoWrapper">
 <iframe src= "https://www.youtube.com/embed/${meal.strYoutube.slice(-11)}"/>
 </div>
