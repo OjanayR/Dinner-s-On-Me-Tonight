@@ -12,7 +12,7 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
 
 function createMeal(meal) {
 const ingredients = [];
-for(i=1; i<=20; i++) {
+for(let i=1; i<=20; i++) {
     if (meal[`strIngredients${i}`]) {
         ingredients.push(`${meal[`strIngredients${i}`]} - ${meal[`strMeasure${i}`]}`)
     } else {
@@ -25,9 +25,14 @@ mealContainer.innerHTML = `
 <div class= "column five">
 <img src = "${meal.strMealThumb}" alt="Meal Img"/>
 <p><strong>Area:</strong> ${meal.strArea}</p>
+<p><strong>Tags:</strong>
+
+${meal.strTags.split(',').join(', ')}</p>
+
 <h3>Ingredients</h3>
-<ul>${ingredients.map(ingredient => `
-<li>${ingredient}</li>`).join('')}
+<ul>
+${ingredients.map(ingredient => 
+`<li>${ingredient}</li>`).join('')}
 </ul>
 </div>
 <div class= "column seven">
@@ -42,7 +47,8 @@ mealContainer.innerHTML = `
 <iframe src= "https://www.youtube.com/embed/${meal.strYoutube.slice(-11)}"/>
 </div>
 
-</div>
-    `;
-
+</div> 
+`;
+    mealContainer.innerHTML = newInnerHTML;
 }
+
