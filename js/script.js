@@ -1,6 +1,10 @@
 const getMealBtn = document.getElementById("TACO");
 const mealContainer = document.getElementById('meal');
 
+
+
+
+
 getMealBtn.addEventListener('click', () => {
 fetch('https://www.themealdb.com/api/json/v1/1/random.php')
 .then(res => res.json())
@@ -10,15 +14,18 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
 })
 });
 
+
 function createMeal(meal) {
-const ingredients = [];
+const availableIngredients = [];
 for(let i=1; i<=20; i++) {
     if (meal[`strIngredients${i}`]) {
-        ingredients.push(`${meal[`strIngredients${i}`]} - ${meal[`strMeasure${i}`]}`)
+        availableIngredients.push(`${meal.strIngredients[i]} - ${meal.strMeasure[i]}`)
     } else {
         break;
     }
+    console.log(availableIngredients);
 }
+
 
 mealContainer.innerHTML = `
 <div class= "row">
@@ -26,13 +33,11 @@ mealContainer.innerHTML = `
 <img src = "${meal.strMealThumb}" alt="Meal Img"/>
 <p><strong>Area:</strong> ${meal.strArea}</p>
 <p><strong>Tags:</strong>
-
 ${meal.strTags.split(',').join(', ')}</p>
 
 <h3>Ingredients</h3>
-<ul>
-${ingredients.map(ingredient => 
-`<li>${ingredient}</li>`).join('')}
+<ul>${availableIngredients.map(ingredient => `
+<li>${ingredient}</li>`).join('')}
 </ul>
 </div>
 <div class= "column seven">
@@ -40,15 +45,13 @@ ${ingredients.map(ingredient =>
 <p>${meal.strInstructions}</p>
 </div>
 </div>
-
-<div class= "row">
-<h3>Video Instructions</h3>
-<div class="videoWrapper">
-<iframe src= "https://www.youtube.com/embed/${meal.strYoutube.slice(-11)}"/>
+<div class ="videoWrapper">
+<iframe src = "https://www.youtube.com/embed/${meal.strYoutube.slice(-11)}"/>
 </div>
 
 </div> 
 `;
-    mealContainer.innerHTML = newInnerHTML;
 }
+
+
 
