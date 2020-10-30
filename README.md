@@ -24,9 +24,12 @@ If you are not satisfied with the (spontaneous) choice, click on the TACO button
 
 ![Screen Shot 2020-10-29 at 7 40 38 PM](https://user-images.githubusercontent.com/69225985/97643762-f499e700-1a1e-11eb-8680-e963c3d40694.png)
 
-# Unsolved Problems
+## Link
+https://ojanayr.github.io/Dinners-On-Me-Tonight/
+
+### Unsolved Problems
 A road block I came across what uploading the "Ingredients" into my application. I used a few different arrays, consulted with my Team's Lead, classmates and attended office hours. I will continue to work with JavaScript to display the listed ingredients from the API.
 
-# Favorite 
+### Favorite 
 Adding the 'taco' emojis and including the YouTube link. 
 
