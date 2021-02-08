@@ -1,7 +1,7 @@
 ## Dinner's On Me Tonight
 
 'Dinner's On Me Tonight' is an app that allows the user to choose meals at the click of a  button...literally. 
-Click on the "TACO' button and a page will appear that inclues, 
+Click on the "TACO' button and a page will appear that includes, 
 - A picture of the meal
 - The nationality of the dish
 - List of ingredients
